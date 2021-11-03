@@ -1,17 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:
+  name: helloworld
   labels:
-    app:
+    app: helloworld
 spec:
-  replicas:
+  replicas: 3
   selector:
     matchLabels:
-      app:
+      app: helloworld
   template:
     metadata:
       labels:
-        app:
+        app: helloworld
     spec:
       containers:
+      - name: helloworld
+        image: image-registry.openshift-image-registry.svc:5000/cookcm/hello-openshift
+        ports:
+        - name: web
+          containerPort: 8090
+          protocol: TCP
+
