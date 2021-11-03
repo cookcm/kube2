@@ -1,7 +1,7 @@
 # https://docs.docker.com/engine/reference/builder/
 
 # step 1 - build image
-FROM golang:1.15.1-alpine AS builder
+FROM golang:1.12-alpine AS builder
 
 COPY hello-openshift.go .
 
