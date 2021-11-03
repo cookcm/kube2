@@ -8,7 +8,7 @@ COPY hello-openshift.go .
 RUN go build -o hello-openshift ./hello-openshift.go
 
 # step 2 - run image
-FROM alpine:3.12.0 AS runner
+FROM alpine:3.14.0 AS runner
 # Copy our static executable.
 COPY --from=builder /go/hello-openshift /usr/bin/hello-openshift
 
